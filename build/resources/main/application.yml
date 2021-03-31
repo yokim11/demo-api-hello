@@ -1,0 +1,29 @@
+info:
+  application:
+    name: ${spring.application.name}
+    version: ${spring.application.version}
+
+spring:
+  application:
+    name: demo-api-hello
+    version: 1.0.0
+
+server:
+  port: 8010
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+logging:
+  config: classpath:logback.xml
