@@ -21,23 +21,10 @@ public class SwaggerConfig {
                 .useDefaultResponseMessages(false)
                 .select()
                 //.apis(RequestHandlerSelectors.any())
-                .apis(RequestHandlerSelectors.basePackage("com.demo.msa.restapi.controller.v1"))
+                .apis(RequestHandlerSelectors.basePackage("com.demo.msa.restapi.controller"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(commonInfo());
-    }
-
-    @Bean
-    public Docket Api2() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("/api/v2/")
-                .useDefaultResponseMessages(false)
-                .select()
-                //.apis(RequestHandlerSelectors.any())
-                .apis(RequestHandlerSelectors.basePackage("com.demo.msa.restapi.controller.v2"))
-                .paths(PathSelectors.any())
-                .build()
-                .apiInfo(commonInfoV2());
     }
 
     private ApiInfo commonInfo() {
@@ -50,13 +37,5 @@ public class SwaggerConfig {
                 .build();
     }
 
-    private ApiInfo commonInfoV2() {
-        return new ApiInfoBuilder()
-                .title("Restful API v2")
-                //.description("")
-                .license("lifeisgift v2")
-                .licenseUrl("https://lifeisgift.tistory.com/v2")
-                .version("2.0")
-                .build();
-    }
+
 }
