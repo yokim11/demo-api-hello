@@ -27,3 +27,6 @@ management:
 
 logging:
   config: classpath:logback.xml
+  level:
+    springfox:
+      documentation: DEBUG
